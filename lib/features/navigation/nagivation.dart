@@ -13,7 +13,8 @@ class MainScreen extends StatelessWidget {
       builder: (context, navigationViewmodel, child) {
         return Scaffold(
           extendBody: true,
-          body: Center(child: pageList[navigationViewmodel.pageIndex]),
+          body: SafeArea(
+              bottom: false, child: pageList[navigationViewmodel.pageIndex]),
           bottomNavigationBar: const BottomNavBar(),
         );
       },

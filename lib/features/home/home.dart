@@ -10,45 +10,40 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        bottom: false,
-        child: SingleChildScrollView(
-          child: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [AppColors.whiteSmoke, AppColors.peachColor],
+    return SingleChildScrollView(
+      child: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [AppColors.whiteSmoke, AppColors.peachColor],
+          ),
+        ),
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  HomeAppBar(),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Welcome(name: "Marina"),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Offers(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
               ),
             ),
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      HomeAppBar(),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Welcome(name: "Marina"),
-                      SizedBox(
-                        height: 40,
-                      ),
-                      Offers(),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
-                  ),
-                ),
-                Listings(),
-              ],
-            ),
-          ),
+            Listings(),
+          ],
         ),
       ),
     );

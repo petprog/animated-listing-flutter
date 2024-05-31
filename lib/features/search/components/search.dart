@@ -43,32 +43,27 @@ class _SearchState extends State<Search> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        bottom: false,
-        child: Stack(
-          children: [
-            const MapViewer(),
-            Positioned(
-              top: 10,
-              left: 30,
-              right: 30,
-              child: SearchForm(
-                formKey: _formKey,
-                scaleAnimation: _scaleAnimation,
-              ),
-            ),
-            Positioned(
-              bottom: 100,
-              left: 30,
-              right: 30,
-              child: MapOptions(
-                scaleAnimation: _scaleAnimation,
-              ),
-            ),
-          ],
+    return Stack(
+      children: [
+        const MapViewer(),
+        Positioned(
+          top: 10,
+          left: 30,
+          right: 30,
+          child: SearchForm(
+            formKey: _formKey,
+            scaleAnimation: _scaleAnimation,
+          ),
         ),
-      ),
+        Positioned(
+          bottom: 100,
+          left: 30,
+          right: 30,
+          child: MapOptions(
+            scaleAnimation: _scaleAnimation,
+          ),
+        ),
+      ],
     );
   }
 }
