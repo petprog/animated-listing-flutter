@@ -24,14 +24,15 @@ class _CountUpTextState extends State<CountUpText>
       vsync: this,
     );
 
-    _countUpAnimation = IntTween(begin: 0, end: widget.number).animate(
+    _countUpAnimation =
+        IntTween(begin: widget.number ~/ 2, end: widget.number).animate(
       CurvedAnimation(
         parent: _controller,
         curve: const Interval(0.5, 1.0, curve: Curves.easeInOut),
       ),
     )..addListener(() {
-        setState(() {});
-      });
+            setState(() {});
+          });
 
     _controller.forward();
   }
