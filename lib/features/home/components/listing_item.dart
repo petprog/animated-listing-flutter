@@ -24,7 +24,7 @@ class _ListingItemState extends State<ListingItem>
 
     _buttonController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 500),
     );
 
     _buttonAnimation = Tween<double>(
