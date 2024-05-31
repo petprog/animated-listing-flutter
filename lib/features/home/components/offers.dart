@@ -68,7 +68,8 @@ class _OffersState extends State<Offers> with SingleTickerProviderStateMixin {
                 const SizedBox(
                   height: 30,
                 ),
-                const CountUpText(
+                CountUpText(
+                  animation: _scaleAnimation,
                   color: Colors.white,
                   number: 1034,
                 ),
@@ -113,7 +114,8 @@ class _OffersState extends State<Offers> with SingleTickerProviderStateMixin {
                 const SizedBox(
                   height: 30,
                 ),
-                const CountUpText(
+                CountUpText(
+                  animation: _scaleAnimation,
                   color: AppColors.beaverColor,
                   number: 2212,
                 ),
