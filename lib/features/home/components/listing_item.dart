@@ -85,7 +85,7 @@ class _ListingItemState extends State<ListingItem>
           child: Stack(
             children: [
               Positioned(
-                bottom: 20,
+                bottom: 10,
                 left: 0,
                 right: 0,
                 child: SizedBox(
