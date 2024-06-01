@@ -58,8 +58,8 @@ class _SearchState extends State<Search> with SingleTickerProviderStateMixin {
         ),
         Positioned(
           top: 10,
-          left: 30,
-          right: 30,
+          left: 25,
+          right: 25,
           child: SearchForm(
             formKey: _formKey,
             scaleAnimation: _scaleAnimation,
