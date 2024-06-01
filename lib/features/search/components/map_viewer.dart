@@ -14,26 +14,26 @@ class _MapViewerState extends State<MapViewer> {
 
   final LatLng _center = const LatLng(-33.86, 151.20);
 
-  final Set<Marker> _markers = {
-    Marker(
-      markerId: const MarkerId('marker_1'),
-      position: const LatLng(-33.86, 151.20),
-      infoWindow: const InfoWindow(
-        title: 'Sydney Opera House',
-        snippet: 'An iconic landmark in Sydney',
-      ),
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
-    ),
-    Marker(
-      markerId: const MarkerId('marker_2'),
-      position: const LatLng(-33.87, 151.21),
-      infoWindow: const InfoWindow(
-        title: 'Sydney Harbour Bridge',
-        snippet: 'A famous bridge in Sydney',
-      ),
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
-    ),
-  };
+  // final Set<Marker> _markers = {
+  //   Marker(
+  //     markerId: const MarkerId('marker_1'),
+  //     position: const LatLng(-33.86, 151.20),
+  //     infoWindow: const InfoWindow(
+  //       title: 'Sydney Opera House',
+  //       snippet: 'An iconic landmark in Sydney',
+  //     ),
+  //     icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+  //   ),
+  //   Marker(
+  //     markerId: const MarkerId('marker_2'),
+  //     position: const LatLng(-33.87, 151.21),
+  //     infoWindow: const InfoWindow(
+  //       title: 'Sydney Harbour Bridge',
+  //       snippet: 'A famous bridge in Sydney',
+  //     ),
+  //     icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+  //   ),
+  // };
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -48,7 +48,7 @@ class _MapViewerState extends State<MapViewer> {
         target: _center,
         zoom: 11.0,
       ),
-      markers: _markers,
+      // markers: _markers,
     );
   }
 }

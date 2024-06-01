@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:place_ui/constants/app_colors.dart';
+import 'package:place_ui/utils/screen_utils.dart';
 
 class SearchForm extends StatelessWidget {
   final GlobalKey<FormState> formKey;
@@ -25,7 +26,7 @@ class SearchForm extends StatelessWidget {
               child: ScaleTransition(
                 scale: scaleAnimation,
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.7,
+                  width: context.screenWidth * 0.7,
                   height: 50,
                   child: TextFormField(
                     decoration: const InputDecoration(

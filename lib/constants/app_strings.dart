@@ -1,6 +1,7 @@
 class AppStrings {
   static String hi = 'Hi';
-  static String letsSelect = "Let's select your perfect place";
+  static String letsSelect = "Let's select your";
+  static String perfectPlace = "perfect place";
   static String buy = "buy";
   static String rent = "rent";
   static String offers = "offers";

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:place_ui/constants/app_colors.dart';
 import 'package:place_ui/constants/app_strings.dart';
+import 'package:place_ui/utils/screen_utils.dart';
 
 class Welcome extends StatefulWidget {
   final String name;
@@ -12,7 +13,8 @@ class Welcome extends StatefulWidget {
 
 class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _opacityAnimation;
+  late Animation<double> _opacityAnimation1;
+  late Animation<double> _opacityAnimation2;
   late Animation<Offset> _slideAnimation;
 
   @override
@@ -20,12 +22,14 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 1500),
     );
-    _opacityAnimation =
-        Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
+    _opacityAnimation1 =
+        Tween<double>(begin: 0.3, end: 1.0).animate(_controller);
+    _opacityAnimation2 =
+        Tween<double>(begin: 0.1, end: 1.0).animate(_controller);
     _slideAnimation =
-        Tween<Offset>(begin: const Offset(0, 0.2), end: Offset.zero)
+        Tween<Offset>(begin: const Offset(0, 0.4), end: Offset.zero)
             .animate(_controller);
     _controller.forward();
   }
@@ -43,7 +47,7 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         FadeTransition(
-          opacity: _opacityAnimation,
+          opacity: _opacityAnimation1,
           child: Text(
             "${AppStrings.hi}, ${widget.name}",
             style: const TextStyle(
@@ -57,14 +61,32 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
         const SizedBox(
           height: 10,
         ),
-        FadeTransition(
-          opacity: _opacityAnimation,
-          child: SlideTransition(
-            position: _slideAnimation,
+        SlideTransition(
+          position: _slideAnimation,
+          child: FadeTransition(
+            opacity: _opacityAnimation1,
             child: SizedBox(
-              width: MediaQuery.of(context).size.width * 0.7,
+              width: context.screenWidth * 0.7,
               child: Text(
                 AppStrings.letsSelect,
+                style: const TextStyle(
+                  fontSize: 34,
+                  fontWeight: FontWeight.w500,
+                  height: 1.1,
+                  color: AppColors.blackColor,
+                ),
+              ),
+            ),
+          ),
+        ),
+        SlideTransition(
+          position: _slideAnimation,
+          child: FadeTransition(
+            opacity: _opacityAnimation2,
+            child: SizedBox(
+              width: context.screenWidth * 0.7,
+              child: Text(
+                AppStrings.perfectPlace,
                 style: const TextStyle(
                   fontSize: 34,
                   fontWeight: FontWeight.w500,

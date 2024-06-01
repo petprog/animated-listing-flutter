@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:place_ui/constants/app_colors.dart';
 import 'package:place_ui/constants/app_strings.dart';
+import 'package:place_ui/features/search/viewmodel/tap_view_model.dart';
 
 class SendOptions extends StatefulWidget {
   final VoidCallback close;
@@ -14,6 +15,7 @@ class _SendOptionsState extends State<SendOptions> {
   int _selectedIndex = -1;
 
   void _handleTap(int index) {
+    tapVm.toggleValue();
     setState(() {
       _selectedIndex = index;
     });

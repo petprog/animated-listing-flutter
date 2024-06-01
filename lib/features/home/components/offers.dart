@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:place_ui/constants/app_colors.dart';
 import 'package:place_ui/constants/app_strings.dart';
 import 'package:place_ui/features/home/components/count_up_text.dart';
+import 'package:place_ui/utils/screen_utils.dart';
 
 class Offers extends StatefulWidget {
   const Offers({super.key});
@@ -49,8 +50,8 @@ class _OffersState extends State<Offers> with SingleTickerProviderStateMixin {
         ScaleTransition(
           scale: _scaleAnimation,
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.44,
-            height: MediaQuery.of(context).size.width * 0.44,
+            width: context.screenWidth * 0.44,
+            height: context.screenWidth * 0.44,
             padding: const EdgeInsets.all(10),
             decoration: const BoxDecoration(
               color: AppColors.brightOrangeColor,
@@ -86,8 +87,8 @@ class _OffersState extends State<Offers> with SingleTickerProviderStateMixin {
         ScaleTransition(
           scale: _scaleAnimation,
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.44,
-            height: MediaQuery.of(context).size.width * 0.44,
+            width: context.screenWidth * 0.44,
+            height: context.screenWidth * 0.44,
             padding: const EdgeInsets.all(10),
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(

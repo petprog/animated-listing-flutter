@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:place_ui/features/search/components/map_options.dart';
 import 'package:place_ui/features/search/components/map_viewer.dart';
+import 'package:place_ui/features/search/components/position_markers.dart';
 import 'package:place_ui/features/search/components/search_form.dart';
+import 'package:place_ui/utils/screen_utils.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
@@ -20,7 +22,7 @@ class _SearchState extends State<Search> with SingleTickerProviderStateMixin {
     super.initState();
 
     _controller = AnimationController(
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 500),
       vsync: this,
     );
 
@@ -46,6 +48,14 @@ class _SearchState extends State<Search> with SingleTickerProviderStateMixin {
     return Stack(
       children: [
         const MapViewer(),
+        Positioned(
+          top: 160,
+          left: 70,
+          right: 70,
+          child: SizedBox(
+              height: context.screenHeight * 0.45,
+              child: const PositionMarkers()),
+        ),
         Positioned(
           top: 10,
           left: 30,
