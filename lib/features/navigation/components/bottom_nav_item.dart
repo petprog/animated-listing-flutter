@@ -18,16 +18,18 @@ class BottomNavItem extends StatelessWidget {
       onTap: onTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        height: active ? 58 : 45,
-        width: active ? 58 : 45,
+        height: active ? 53 : 45,
+        width: active ? 53 : 45,
         decoration: BoxDecoration(
           color: active ? AppColors.brightOrangeColor : AppColors.blackColor,
           shape: BoxShape.circle,
         ),
-        child: Icon(
-          icon,
-          color: Colors.white,
-          size: 22,
+        child: Center(
+          child: Icon(
+            icon,
+            color: Colors.white,
+            size: 22,
+          ),
         ),
       ),
     );
