@@ -34,7 +34,7 @@ class _MarkerState extends State<Marker> with TickerProviderStateMixin {
     ));
 
     _fadeController = AnimationController(
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 500),
       vsync: this,
     );
 
@@ -64,7 +64,7 @@ class _MarkerState extends State<Marker> with TickerProviderStateMixin {
       child: ValueListenableBuilder<bool>(
         valueListenable: tapVm.valueNotifier,
         builder: (context, value, child) => AnimatedContainer(
-          duration: const Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 500),
           curve: Curves.easeInOut,
           height: 45,
           width: value ? 45 : 75,

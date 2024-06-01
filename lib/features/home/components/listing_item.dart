@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:glass/glass.dart';
 import 'package:place_ui/constants/app_colors.dart';
 import 'package:place_ui/constants/assets_path.dart';
+import 'package:place_ui/utils/screen_utils.dart';
 
 class ListingItem extends StatefulWidget {
   final String text;
@@ -70,7 +71,7 @@ class _ListingItemState extends State<ListingItem>
     return Column(
       children: [
         Container(
-          height: 187,
+          height: context.screenWidth * 0.45,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(
               Radius.circular(25),
